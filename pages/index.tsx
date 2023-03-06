@@ -22,8 +22,8 @@ export default function Home() {
             <Image
               src="/HectorLogo.svg"
               alt="13"
-              width={600}
-              height={400}
+              width={350}
+              height={200}
               priority
             />
             <p className={inter.className}>Essentials for home and living</p>
