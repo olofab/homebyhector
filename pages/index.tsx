@@ -20,7 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
             <Image
-              src="/HectorLogo.svg"
+              src="/HectorLogo3.svg"
               alt="13"
               width={350}
               height={200}
