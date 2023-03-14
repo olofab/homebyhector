@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Advent_Pro } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
-const inter = Advent_Pro({
+const inter = Montserrat({
     weight: '400',
     preload: false,
 })
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home by Hector</title>
+        <title>Hector</title>
         <meta name="description" content="Home by Hector" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -20,7 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
             <Image
-              src="/HectorLogo3.svg"
+              src="/Hectorlogo2.svg"
               alt="13"
               width={350}
               height={200}
