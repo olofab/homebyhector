@@ -1,0 +1,38 @@
+.menu{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0 2rem 0;
+    width: 100%;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+    background: transparent;
+}
+
+.menu li {
+    border-bottom: 1px solid transparent;
+    padding: 0 0.5rem 0 0.5rem;
+    transition: border-bottom-color 0.3s ;
+}
+
+.menu li:hover {
+    border-bottom-color: var(--black);
+}
+
+.container{
+    width: 100%;
+    padding-top: 2rem;
+    transition: background-color 0.3s ease-in-out;
+    background: transparent;
+    color: var(--white);
+}
+
+.container:hover {
+    color: #cccccc;
+    background: var(--white);
+}
+
+.container li:hover{
+    color: var(--black)
+
+}
