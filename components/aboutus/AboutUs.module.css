@@ -1,0 +1,26 @@
+.aboutMe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aboutText {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.aboutImage {
+    flex: 1;
+    height: 100%;
+}
+
+.aboutImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.margin {
+    margin-bottom: 2rem;
+}
