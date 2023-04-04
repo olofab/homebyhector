@@ -3,23 +3,106 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
 
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--white);
+  z-index: 2;
 }
 
+.bgImg {
+  width: 100%;
+  height: auto;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+}
 
+.listItem{
+  font-size: 2rem;
+}
+
+.headerLogo{
+  text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-size: 4rem;
+  width: 100%;
+  padding: 1rem;
+
+}
+
+.sectionHeader{
+  margin: 2rem 0 3rem 0;
+}
+
+.sectionElement{
+  margin: 4rem 0 4rem 0;
+}
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 4rem 2rem 4rem 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.productButton {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  padding: 15px 30px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.productButton:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+
+.container {
   position: relative;
-  padding: 4rem 0;
-  color: #FEF8EE;
+  width: 100%;
+}
+
+.container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container .text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  box-sizing: border-box;
+width: 100%;
 }
