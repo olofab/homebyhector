@@ -1,0 +1,66 @@
+.title {
+    color: var(--blue);
+    line-height: 1;
+    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.ingress {
+    font-size: 1rem;
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress);
+    line-height: 1.80;
+}
+.menuItem {
+    font-size: 1.25rem;
+    font-family: var(--font-ingress);
+    font-weight: 100;
+    line-height: 1.80;
+}
+
+.ingressSmall {
+    font-size: 1rem;
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress-small);
+}
+
+.hovedtittel {
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress);
+    z-index: 1;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.undertittel {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-small);
+    font-size: 1.25rem;
+}
+
+.undertittelknapp {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-small);
+    font-size: 1.25rem;
+    width: 70%;
+    text-align: left;
+}
+
+.undertittelknapp:hover {
+    font-weight: 400;
+    color: var(--brown);
+}
+
+.underline {
+    border-bottom: 2px solid var(--brown);
+    bottom: 50%;
+    transform: translateY(-550%);
+}
+
+.lenke {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    font-size: 1.25rem;
+    text-decoration: underline;
+}
