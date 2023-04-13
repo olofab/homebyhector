@@ -31,6 +31,19 @@
     transition: background-color 0.3s ease-in-out;
 }
 
+.deleteButton:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.total {
+    text-align: right;
+}
+
+.empty{
+    padding: 2rem 2rem 2rem 2rem
+}
+
 .quantityBox{
     background-color: var(--white);
     color: var(--black);

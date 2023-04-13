@@ -3,6 +3,8 @@ import {Ingress, IngressSmall, Undertittel} from "@/components/typography";
 import { SmallFooter } from "@/components/footer";
 import styles from "@/styles/Cart.module.css";
 import { ChangeEvent, useState } from "react";
+import {PageWrapper} from "@/components/wrappers/PageWrapper";
+import Header, {PageHeader} from "@/components/header";
 
 export default function Cart() {
     const { cartItems, updateCartItem, removeItem } = useCart();
@@ -39,13 +41,20 @@ export default function Cart() {
     if (cartItems.length === 0) {
         return (
             <>
-                <Undertittel>Ingenting i kurven</Undertittel>
+                <PageHeader/>
+            <PageWrapper>
+                <Undertittel style={styles.empty}>Looks like your shopping cart is feeling a bit lonely. Add some items and give it some company</Undertittel>
+                <a href={'/products'} className={styles.sectionElement}>
+                    <button className={styles.deleteButton}><Ingress>See all products</Ingress></button>
+                </a>
+            </PageWrapper>
             </>
         );
     }
 
     return (
         <>
+            <PageHeader/>
             <div className={styles.cartContainer}>
                 {cartItems.map((item, index) => {
                     const totalItemPrice = quantities[item.id] * item.price;
@@ -64,7 +73,7 @@ export default function Cart() {
                     </div>)
                 })
                 }
-                <Undertittel>{totalPrice}</Undertittel>
+                <Undertittel  style={styles.total}>{totalPrice}</Undertittel>
             </div>
             <SmallFooter />
         </>

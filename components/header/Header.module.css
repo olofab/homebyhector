@@ -9,6 +9,14 @@
     background: transparent;
 }
 
+.menuSmall{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    background: transparent;
+}
+
 .menu li {
     border-bottom: 1px solid transparent;
     padding: 0 0.5rem 0 0.5rem;

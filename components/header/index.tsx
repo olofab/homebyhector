@@ -41,9 +41,33 @@ export default function Header() {
     );
 }
 
+
 export function TopHeader() {
     return (
         <header className={styles.header}>
             <Ingress>Scented candles made of 100% vegetable wax from rapeseed.</Ingress>
+        </header>)
+}
+
+export function PageHeader() {
+    return (
+        <header className={styles.headerSmall}>
+            <Title style={styles.headerLogoSmall}>
+                the hektor company
+            </Title>
+            <nav className={headerStyles.menuSmall}>
+                <li>
+                    <a href={"/products"}>
+                        <MenuItem>
+                            Products
+                        </MenuItem>
+                    </a>
+                </li>
+                <li>
+                        <MenuItem>
+                            About us
+                        </MenuItem>
+                </li>
+            </nav>
         </header>)
 }

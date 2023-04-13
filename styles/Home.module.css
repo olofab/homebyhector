@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
 }
@@ -11,6 +10,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--white);
+  z-index: 2;
+}
+
+.headerSmall{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   width: 100%;
   padding: 1rem;
   background-color: var(--white);
@@ -46,6 +55,15 @@
   width: 100%;
   padding: 1rem;
 
+}
+
+.headerLogoSmall{
+  text-align: left;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -1px;
+  font-size: 2rem;
+  margin-right: 2rem;
 }
 
 .sectionHeader{
