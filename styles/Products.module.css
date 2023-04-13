@@ -52,3 +52,125 @@
     border: 1px solid #ccc;
     margin-right: 8px;
 }
+
+/* Product page */
+
+.productcontainter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%
+
+}
+/* Styles for the product image */
+.productimage {
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for the product details */
+.productdetails {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem 2rem 6rem;
+}
+
+.productdetails h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.productdetails p {
+    font-size: 1.125rem;
+    align-self: baseline;
+
+}
+
+.productdetails .price {
+
+    margin-bottom: 1.5rem;
+}
+
+.productdetails .quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.productdetails .quantity button {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 1rem;
+    border: 1px solid var(--black);
+
+}
+
+.productdetails .quantity button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.productdetails .quantity button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+.productdetails .quantity .span {
+    margin: 0 2rem;
+}
+
+.addtocartContainer{
+    width: 80%;
+    display: flex;
+    margin: auto 0;
+    flex-direction: column;
+
+
+}
+
+.addtocart {
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addtocart:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+
+    .productcontainter{
+       flex-direction: column;
+        margin-bottom: 4rem;
+    }
+
+    .productdetails {
+        width: auto;
+        margin: 2rem
+    }
+
+    .addtocartContainer{
+        width: 100%;
+        margin-top: 2rem;
+    }
+}

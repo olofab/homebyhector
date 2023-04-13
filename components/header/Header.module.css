@@ -28,11 +28,18 @@
 }
 
 .container:hover {
-    color: #cccccc;
+    color: var(--black);
     background: var(--white);
 }
 
-.container li:hover{
-    color: var(--black)
+@media (max-width: 768px) {
+
+
+    .menu{
+        gap: 0;
+        padding: 0;
+        font-size: 0.5rem;
+
+    }
 
 }

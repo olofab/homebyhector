@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
+import {Ingress, Title} from "@/components/typography";
+import Link from "next/link";
+import {useCart} from "@/context/CartProvider";
 
 
 const Footer = () => {
@@ -50,5 +53,18 @@ const Footer = () => {
         </footer>
     );
 };
+
+export function SmallFooter() {
+    return(
+        <footer className={styles.bottomHeader}>
+            <Link href={'/'}>
+            <Title small={true}>
+                the hektor company
+            </Title>
+            </Link>
+            <Link href={'/cart'}><Ingress>Cart</Ingress></Link>
+        </footer>
+    )
+}
 
 export default Footer;

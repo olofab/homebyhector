@@ -5,10 +5,10 @@ const AboutUs = () => {
     return (
         <section className={styles.aboutMe}>
             <div className={styles.aboutText}>
-                <Hovedtittel style={styles.margin}>Hvordan begynte dette?</Hovedtittel>
-                <Ingress style={styles.margin}>Vi begynte å lage duftlys fordi vi selv elsker dem og ønsket å skape noe eget. Det er noe spesielt med å tenne et duftlys og la rommet fylles med en herlig aroma som kan hjelpe oss å slappe av og nyte øyeblikket.</Ingress>
-                <Ingress style={styles.margin}>Vi ville dele denne opplevelsen med andre og skape våre egne unike dufter som passer til ulike situasjoner og anledninger. Så nå har vi dedikert oss til å lage duftlys av høy kvalitet som kan gi en fantastisk opplevelse for alle som elsker å tenne et lys og la seg bli omfavnet av deilig duft.</Ingress>
-                <Ingress>Andreas og Sofie</Ingress>
+                <Hovedtittel style={styles.margin}>How did the scented candle addiction begin?</Hovedtittel>
+                <Ingress style={styles.margin}>We started making scented candles because we love them ourselves and wanted to create something of our own. There is something special about lighting a scented candle and letting the room fill with a delightful aroma that can help us relax and enjoy the moment.</Ingress>
+                <Ingress style={styles.margin}>We wanted to share this experience with others and create our own unique scents that would be suitable for different situations and occasions. So now, we have dedicated ourselves to making high-quality scented candles that can provide a fantastic experience for anyone who loves to light a candle and be enveloped by a delightful scent.</Ingress>
+                <Ingress>Andy and Sof</Ingress>
             </div>
             <div className={styles.aboutImage}>
                 <img src={'../oss.jpg'} alt={'oss'} />

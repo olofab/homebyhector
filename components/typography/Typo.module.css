@@ -1,10 +1,19 @@
 .title {
-    color: var(--blue);
     line-height: 1;
-    font-weight: 500;
-    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'SOFT' 0, 'WONK' 1, 'opsz' 100;
+    letter-spacing: -0.05em;
 }
 
+.mellomtittel{
+    font-family: 'Fraunces', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+
+}
 
 .ingress {
     font-size: 1rem;
@@ -30,7 +39,6 @@
     font-weight: var(--font-weight-ingress);
     z-index: 1;
     font-size: 2rem;
-    margin-bottom: 0;
 }
 
 .undertittel {

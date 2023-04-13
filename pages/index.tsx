@@ -1,10 +1,13 @@
 import styles from '@/styles/Home.module.css'
 import Header, { TopHeader} from "@/components/header";
-import {Hovedtittel, Ingress} from "@/components/typography";
+import {Hovedtittel, Ingress, Mellomtittel, Title} from "@/components/typography";
 import ProductSlider, {Product} from "@/components/product-grid";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import AboutUs from "@/components/aboutus";
-import Footer from "@/components/footer";
+import Footer, {SmallFooter} from "@/components/footer";
+import {products_data} from "@/pages/api/products";
+import {PageWrapper} from "@/components/wrappers/PageWrapper";
+import {GetStaticProps} from "next";
 
 type Props = {
     products: Product[]
@@ -12,70 +15,69 @@ type Props = {
 
 
 const Home: FC<Props> = ({products}) => {
+    const [imageSrc, setImageSrc] = useState('');
+
+    useEffect(() => {
+        if (window.innerWidth > 767) {
+            setImageSrc('/backdrop.jpg');
+        } else {
+            setImageSrc('/backdrop_mobil.jpg');
+        }
+
+        // Re-run this effect when window size changes
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    function handleResize() {
+        if (window.innerWidth > 767) {
+            setImageSrc('/backdrop.jpg');
+        } else {
+            setImageSrc('/backdrop_mobil.jpg');
+        }
+    }
+
+    function Products (){
+        return(
+            <>
+                <header className={styles.sectionHeader}>
+                    <Hovedtittel>Products</Hovedtittel>
+                </header>
+            <ProductSlider products={products}/>
+        <a href={'/products'} className={styles.sectionElement}>
+            <button className={styles.productButton}><Ingress>SEE ALL PRODUCTS</Ingress></button>
+        </a>
+            </>
+        )
+    }
     return (
         <>
             <TopHeader/>
-            <main className={styles.main}>
-                <div className={styles.container}>
-                    <img src="https://images.unsplash.com/photo-1542112958-09dbbba26152?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Example Image" className={styles.bgImg}/>
+<PageWrapper>
+    <div className={styles.container}>
+                    <img src={imageSrc} alt={imageSrc} className={styles.bgImg}/>
                     <div className={styles.text}>
                         <Header/>
                     </div>
                 </div>
                 <section className={styles.center}  id="products">
-                    <header className={styles.sectionHeader}>
-                        <Hovedtittel>Produkter</Hovedtittel>
-                    </header>
-                    <ProductSlider products={products}/>
-                    <div className={styles.sectionElement}>
-                        <button className={styles.productButton}><Ingress>SE ALLE DUFTLYS</Ingress></button>
-                    </div>
-
+                <Products/>
                 </section>
-                <section className={styles.center} id="aboutus">
+                <section className={styles.centerAboutUs} id="aboutus">
                     <AboutUs/>
                 </section>
-                <div className={styles.center}>
-
-                </div>
                 <section className={styles.center}>
                     <Footer/>
-
                 </section>
-            </main>
+<SmallFooter/>
+</PageWrapper>
         </>
     )
 }
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps<Props> = () => {
     // Fetch products data from server API
-    const data : Product[] = [
-            {
-                "name": "Kjærlighetsbrisen",
-                "image": './etiketter/brisen.png'
-            },
-            {
-                "name": "Clean Slate",
-                "image": './etiketter/cleanslate.png'
-            },
-            {
-                "name": "Glam & Go",
-                "image": './etiketter/glamngo.png'
-            },
-            {
-                "name": "Morning Boozt",
-                "image": './etiketter/morningboozt.png'
-            },
-            {
-                "name": "Mountain Retreat",
-                "image": './etiketter/mountainretreat.png'
-            },
-            {
-                "name": "Night-home Nostalgia",
-                "image": './etiketter/nighthome.png'
-            }
-        ]
-    ;
+    const data = products_data;
 
     // Return the products data as props
     return {

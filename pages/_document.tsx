@@ -13,6 +13,7 @@ export default function Document() {
                 <link
                     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap"
                     rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap" rel="stylesheet"/>
             </Head>
             <body>
             <Main/>

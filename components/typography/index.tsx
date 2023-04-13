@@ -3,7 +3,7 @@ import React, {MouseEventHandler, ReactElement, ReactNode} from "react";
 import Link from "next/link";
 
 interface Props {
-    children: string | JSX.Element | undefined | JSX.Element[];
+    children: string | JSX.Element | undefined | JSX.Element[] | number;
     style?: string;
     small?: boolean;
     key?: any;
@@ -45,6 +45,14 @@ export const Ingress = (props: Props) => {
         <p className={`${styles.ingress} ${props.style}`} key={props.key}>
             {props.children}
         </p>
+    );
+};
+
+export const Mellomtittel = (props: Props) => {
+    return (
+        <h2 className={`${styles.mellomtittel} ${props.style}`} key={props.key}>
+            {props.children}
+        </h2>
     );
 };
 
