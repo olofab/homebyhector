@@ -1,5 +1,5 @@
 import styles from '@/styles/Home.module.css'
-import Header, { TopHeader} from "@/components/header";
+import Header, {TopHeader, WaitingHeader} from "@/components/header";
 import {Hovedtittel, Ingress, Mellomtittel, Title} from "@/components/typography";
 import ProductSlider, {Product} from "@/components/product-grid";
 import {FC, useEffect, useState} from "react";
@@ -50,6 +50,32 @@ const Home: FC<Props> = ({products}) => {
             </>
         )
     }
+
+    const WaitingScreen = () => {
+        return (
+            <>
+                <TopHeader/>
+                <PageWrapper>
+                    <div className={styles.container}>
+                        <img src={imageSrc} alt={imageSrc} className={styles.bgImg}/>
+                        <div className={styles.text}>
+                            <WaitingHeader/>
+                        </div>
+                    </div>
+                    <section className={styles.centerAboutUs} id="aboutus">
+                        <AboutUs/>
+                    </section>
+                </PageWrapper>
+            </>
+        )
+    }
+    const waitingpage = true;
+    if(waitingpage){
+        return (
+            <WaitingScreen/>
+        )
+    }
+
     return (
         <>
             <TopHeader/>

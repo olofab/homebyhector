@@ -41,6 +41,16 @@ export default function Header() {
     );
 }
 
+export function WaitingHeader() {
+    return (
+        <div className={headerStyles.container}>
+            <Title style={styles.headerLogo}>
+                the hektor company
+            </Title>
+        </div>
+    );
+}
+
 
 export function TopHeader() {
     return (
