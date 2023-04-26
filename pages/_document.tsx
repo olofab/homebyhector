@@ -4,8 +4,8 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <title>Hector</title>
-                <meta name="description" content="Home by Hector"/>
+                <title>the hektor co.</title>
+                <meta name="description" content="the hektor company"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
