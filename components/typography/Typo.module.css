@@ -1,0 +1,74 @@
+.title {
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'SOFT' 0, 'WONK' 1, 'opsz' 100;
+    letter-spacing: -0.05em;
+}
+
+.mellomtittel{
+    font-family: 'Fraunces', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+
+}
+
+.ingress {
+    font-size: 1rem;
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress);
+    line-height: 1.80;
+}
+.menuItem {
+    font-size: 1.25rem;
+    font-family: var(--font-ingress);
+    font-weight: 100;
+    line-height: 1.80;
+}
+
+.ingressSmall {
+    font-size: 1rem;
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress-small);
+}
+
+.hovedtittel {
+    font-family: var(--font-ingress);
+    font-weight: var(--font-weight-ingress);
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.undertittel {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-small);
+    font-size: 1.25rem;
+}
+
+.undertittelknapp {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-small);
+    font-size: 1.25rem;
+    width: 70%;
+    text-align: left;
+}
+
+.undertittelknapp:hover {
+    font-weight: 400;
+    color: var(--brown);
+}
+
+.underline {
+    border-bottom: 2px solid var(--brown);
+    bottom: 50%;
+    transform: translateY(-550%);
+}
+
+.lenke {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    font-size: 1.25rem;
+    text-decoration: underline;
+}

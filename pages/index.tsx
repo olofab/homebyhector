@@ -1,34 +1,116 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Montserrat } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Header, {TopHeader, WaitingHeader} from "@/components/header";
+import {Hovedtittel, Ingress, Mellomtittel, Title} from "@/components/typography";
+import ProductSlider, {Product} from "@/components/product-grid";
+import {FC, useEffect, useState} from "react";
+import AboutUs from "@/components/aboutus";
+import Footer, {SmallFooter} from "@/components/footer";
+import {products_data} from "@/pages/api/products";
+import {PageWrapper} from "@/components/wrappers/PageWrapper";
+import {GetStaticProps} from "next";
 
-const inter = Montserrat({
-    weight: '400',
-    preload: false,
-})
-
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Hector</title>
-        <meta name="description" content="Home by Hector" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <div className={styles.center}>
-            <Image
-              src="/Hectorlogo2.svg"
-              alt="13"
-              width={350}
-              height={200}
-              priority
-            />
-            <p className={inter.className}>Essentials for home and living</p>
-        </div>
-      </main>
-    </>
-  )
+type Props = {
+    products: Product[]
 }
+
+
+const Home: FC<Props> = ({products}) => {
+    const [imageSrc, setImageSrc] = useState('');
+
+    useEffect(() => {
+        if (window.innerWidth > 767) {
+            setImageSrc('/backdrop.jpg');
+        } else {
+            setImageSrc('/backdrop_mobil.jpg');
+        }
+
+        // Re-run this effect when window size changes
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    function handleResize() {
+        if (window.innerWidth > 767) {
+            setImageSrc('/backdrop.jpg');
+        } else {
+            setImageSrc('/backdrop_mobil.jpg');
+        }
+    }
+
+    function Products (){
+        return(
+            <>
+                <header className={styles.sectionHeader}>
+                    <Hovedtittel>Products</Hovedtittel>
+                </header>
+            <ProductSlider products={products}/>
+        <a href={'/products'} className={styles.sectionElement}>
+            <button className={styles.productButton}><Ingress>SEE ALL PRODUCTS</Ingress></button>
+        </a>
+            </>
+        )
+    }
+
+    const WaitingScreen = () => {
+        return (
+            <>
+                <TopHeader/>
+                <PageWrapper>
+                    <div className={styles.container}>
+                        <img src={imageSrc} alt={imageSrc} className={styles.bgImg}/>
+                        <div className={styles.text}>
+                            <WaitingHeader/>
+                        </div>
+                    </div>
+                    <section className={styles.centerAboutUs} id="aboutus">
+                        <AboutUs/>
+                    </section>
+                </PageWrapper>
+            </>
+        )
+    }
+    const waitingpage = true;
+    if(waitingpage){
+        return (
+            <WaitingScreen/>
+        )
+    }
+
+    return (
+        <>
+            <TopHeader/>
+<PageWrapper>
+    <div className={styles.container}>
+                    <img src={imageSrc} alt={imageSrc} className={styles.bgImg}/>
+                    <div className={styles.text}>
+                        <Header/>
+                    </div>
+                </div>
+                <section className={styles.center}  id="products">
+                <Products/>
+                </section>
+                <section className={styles.centerAboutUs} id="aboutus">
+                    <AboutUs/>
+                </section>
+                <section className={styles.center}>
+                    <Footer/>
+                </section>
+<SmallFooter/>
+</PageWrapper>
+        </>
+    )
+}
+
+export const getStaticProps: GetStaticProps<Props> = () => {
+    // Fetch products data from server API
+    const data = products_data;
+
+    // Return the products data as props
+    return {
+        props: {
+            products: data,
+        },
+    };
+}
+
+export default Home;
